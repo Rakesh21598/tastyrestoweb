@@ -1,0 +1,213 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <title>Tasty Resto</title>
+<link rel="shortcut icon" type="image/x-icon" href="{% static '/images/logo_res.png' %}">
+<!--<link rel="stylesheet" href="C:\Users\RAKESH\Desktop\project\menu.css">-->
+<!--<link rel="stylesheet" href="C:\Users\RAKESH\Desktop\project\websitecss.css">-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'style14.css'%}">
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 0}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</head>
+<body>
+<header class="stickytop">
+<div class="menu">
+<img src="{% static '/images/logo_res.png' %}" style="width:100px;height:100px;margin-left:60px;"/>
+<div class="menulist">
+<nav>
+<ul>
+<form action="home" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Home"></li></form>
+
+    <form action="menu" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Menu"></li></form>
+
+ <form action="about" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="About"></li></form>
+    <form action="rev" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Reservation"></li></form>
+  <form action="gallery" method="post">
+        {% csrf_token %}
+        <li><input type="submit" value="Gallery"></li></form>
+<!--<li><a href="#">Pages</a>
+<ul class="dropcontent">
+ <form action="rev" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Reservation"></li></form>
+
+
+ <form action="gallery" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Gallery"></li></form>
+</ul>
+</li>-->
+ <form action="contact" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Contact"></li></form>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<div class="imgmenu">
+<img src="{% static '/images/menuimg.jpg' %}" style="width:100%;height:700px"/>
+<div class="menuhead">
+<h1>Special Menu</h1>
+</div>
+</div>
+<!--<div class="menuhead2">
+<h1>Special Menu</h1>
+</div>-->
+<div class="splmenu">
+<ul>
+<form action="menu" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="All"></li></form>
+<form action="drinks" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Drinks"></li></form>
+<form action="ice" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Icecream"></li></form>
+<form action="food" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Food"></li></form>
+</ul>
+</div>
+
+<div class="menutble">
+<table cellpadding="10">
+<tr>
+<th>
+<td><img src="{% static '/images/menu1.jpg' %}"> </td>
+</th>
+<th>
+<td><img src="{% static '/images/menu2.jpg' %}"> </td>
+</th>
+<!--<th>
+<td><img src="C:\Users\RAKESH\Desktop\project\menu3.jpg"/> </td>
+</th>-->
+<th>
+<td><img src="{% static '/images/menu4.jpg' %}"> </td>
+</th>
+</tr>
+<tr>
+<th>
+<td><img src="{% static '/images/menu5.jpg' %}"> </td>
+</th>
+<th>
+<td><img src="{% static '/images/menu6.jpg' %}"> </td>
+</th>
+<th>
+<td><img src="{% static '/images/menu7.jpg' %}"> </td>
+</th>
+</tr>
+<tr>
+<th>
+<td><img src="{% static '/images/menu8.jpg' %}"> </td>
+</th>
+<th>
+<td><img src="{% static '/images/menu9.jpg' %}"> </td>
+</th>
+<th>
+<td><img src="{% static '/images/menu10.jpg' %}"> </td>
+</th>
+
+</tr>
+</table>
+</div>
+<div class="img">
+<img src="{% static '/images/pic2.jpg' %}" style="width:100%;height:500px"/>
+<div class="imgtxt">
+<h1>" If you're not the one cooking, stay out of the<br> way and compliment the chef. "</h1>
+</div>
+</div>
+<div class="custrew">
+<h1>Customer Reviews</h1>
+<div class="custimg">
+<img src="{% static '/images/rew.jpg' %}"/>
+</div>
+</div>
+<div class="slideshow-container">
+<div class="mySlides">
+<q>This  Tasty Resto has left the best impressions! Hospitable hosts, delicious dishes, beautiful presentation,<br>
+wide wine list and wonderful dessert. I recommend to everyone! I would like to come back here again and again.</q>
+<p class="cust">Gokul</p>
+</div>
+
+<div class="mySlides">
+<q> First time in Tasty Resto and YOU have to go! It’s the cutest little spot with amazing food. The Tasty Resto is to die for.
+IT WAS FIRE!!<br>The service we received was so amazing and we will definitely be back again.
+They made us feel welcomed and gave us an amazing experience..</q>
+<p class="cust">Rakesh</p>
+</div>
+
+<div class="mySlides">
+<q>Do yourself a favor and visit this lovely restaurant in Tasty Resto. The service is unmatched.<br>
+The staff truly cares about your experience.The food is absolutely amazing – everything we tasted melted in other mouthsHighly recommend!</q>
+<p class="cust">Keerthi Rajan</p>
+</div>
+<div class="mySlides">
+<q>This spot gives extraordinary service and yummy meals. One of my favourite restaurants around town.<br>
+The meals served rapidly and the rates were reasonable. Highly recommended.</q>
+<p class="cust">Uthra</p>
+</div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div class="dot-container">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span>
+</div>
+<!--<div class="contactinfo">
+<div class="contact">
+<p>PHONE <br> 634846582</p>
+<p>EMAIL <br> tastyresot@gamil.com</p>
+</div>-->
+<div class="contact">
+<ul>
+<li><a href="#">phone<br>6384291339</a></li>
+<li><a href="#">email<br>tasteyresto@gmail.com</a></li>
+<li><a href="#">Location<br>Near Busstand,Hosur</a></li>
+</ul>
+</div>
+</body>
+</html>

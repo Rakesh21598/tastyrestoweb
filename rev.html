@@ -1,0 +1,257 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <title>Tasty Resto</title>
+<link rel="shortcut icon" type="image/x-icon" href="{% static '/images/logo_res.png' %}">
+<!--<link rel="stylesheet" href="C:\Users\RAKESH\Desktop\project\menu.css">-->
+<!--<link rel="stylesheet" href="C:\Users\RAKESH\Desktop\project\websitecss.css">-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<link rel="stylesheet" type="text/css" href="{% static 'style14.css'%}">
+</head>
+<body>
+<header class="stickytop">
+<div class="menu">
+<img src="{% static '/images/logo_res.png' %}" style="width:100px;height:100px;margin-left:60px;"/>
+<div class="menulist">
+<nav>
+<ul>
+<form action="home" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Home"></li></form>
+
+    <form action="menu" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Menu"></li></form>
+
+ <form action="about" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="About"></li></form>
+    <form action="rev" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Reservation"></li></form>
+  <form action="gallery" method="post">
+        {% csrf_token %}
+        <li><input type="submit" value="Gallery"></li></form>
+<!--<li><a href="#">Pages</a>
+<ul class="dropcontent">
+ <form action="rev" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Reservation"></li></form>
+
+
+ <form action="gallery" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Gallery"></li></form>
+</ul>
+</li>-->
+ <form action="contact" method="post" >
+        {% csrf_token %}
+        <li><input type="submit" value="Contact"></li></form>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<div class="imgrev">
+<img src="{% static '/images/restaurant.jpg' %}" style="width:100%;height:650px"/>
+<div class="headcls">
+<h1>Reservation</h1>
+</div>
+</div>
+<!--<div class="heading2">
+<h2>Reservation</h2>
+</div>-->
+<div class="center">
+ <div class="containers">
+
+     <div class="cnc">
+     <h2>Contact Details:</h2>
+     </div>
+
+      <form class="formcls" id="form">
+
+ <div class="formcontrols">
+
+    <input type="text"style="width:500px;height:40px" placeholder="Enter UserName" id="user">
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+    <small>Error Message</small>
+ </div>
+
+ <div class="formcontrols">
+
+    <input type="email"style="width:500px;height:40px" placeholder="Enter Email Id"id="email">
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+    <small>Error Message</small>
+ </div>
+
+          <div class="formcontrols">
+
+ <input type="text"style="width:500px;height:40px" placeholder="Enter mobile no" id="contact">
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+ <small>Error Message</small>
+ </div>
+
+ <div class="formcontrols">
+
+ <input type="text"style="width:500px;height:40px" placeholder="Alt Mobile No" id="altcontact">
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+ <small>Error Message</small>
+ </div>
+          <div class="formcontrols">
+                       <div class="revfm">
+     <h2>Book A Table:</h2>
+     </div>
+
+ <input type="datetime-local"style="width:500px;height:40px"  id="dte">
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+ <small>Error Message</small>
+ </div>
+          <div class="formcontrols">
+
+
+<label for="tbl"></label>
+<select id="tble" name="tbl" style="width:510px;height:40px;margin-left:26px">
+<option>Select TableNo:</option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+ <option>10</option>
+</select>
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+ <small>Error Message</small>
+ </div>
+<div class="formcontrols">
+
+
+<label for="slt"></label>
+<select id="person" name="slt" style="width:510px;height:40px;margin-left:26px">
+<option>Select No.Of Person:</option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>Morethan 05</option>
+</select>
+ <i class="fas fa-check-circle"></i>
+ <i class="fas fa-exclamation-circle"></i>
+ <small>Error Message</small>
+ </div>
+
+<div class="btn">
+           <form action="submit" method="post" >
+        {% csrf_token %}
+        <input type="submit" value="Submit"></form>
+              </div>
+      </form>
+ </div>
+</div>
+
+<div class="contact">
+<ul>
+<li><a href="#">phone<br>6384291339</a></li>
+<li><a href="#">email<br>tasteyresto@gmail.com</a></li>
+<li><a href="#">Location<br>Near Busstand,Hosur</a></li>
+</ul>
+</div>
+
+ <script>
+ var form = document.getElementById("form");
+ var username = document.getElementById("user");
+ var email = document.getElementById("email");
+ var contact = document.getElementById("contact");
+ var altcontact = document.getElementById("altcontact");
+ var tble = document.getElementById("tble");
+ var dte = document.getElementById("dte");
+ var person = document.getElementById("person");
+
+ form.addEventListener("submit",e=>{
+ e.preventDefault();
+ checkInput();
+ });
+ function checkInput(){
+ var usernamevalue = username.value.trim();
+ var emailvalue = email.value.trim();
+ var contactvalue = contact.value.trim();
+ var altcontactvalue = altcontact.value.trim();
+ var tblevalue = tble.value.trim();
+ var dtevalue = dte.value.trim();
+ var personvalue = person.value.trim();
+
+ if(usernamevalue === ""){
+ setError(username, 'Username cannot be Blank');
+ }
+ else{
+ setSuccess(username);
+ }
+
+ if(emailvalue === ""){
+ setError(email, 'Email cannot be Blank');
+ }
+ else{
+ setSuccess(email);
+ }
+ if(contactvalue === ""){
+ setError(contact, 'Contact Cannot Be Blank');
+ }
+ else{
+ setSuccess(contact);
+ }
+
+
+
+if(dtevalue === ""){
+ setError(dte, 'Date & Time cannot be Blank');
+ }
+ else{
+ setSuccess(dte);
+ }
+
+ if(personvalue === "Select No.Of Person:"){
+ setError(person, 'Persons cannot be Blank');
+ }
+ else{
+ setSuccess(person);
+ }
+
+ if(tblevalue === "Select TableNo:"){
+     setError(tble, 'TableNo Cannot Be Blank');
+ }
+else{
+    setSuccess(tble);
+ }
+
+ }
+
+ function setError(input,message){
+ const formcontrol = input.parentElement;
+ const smalll = formcontrol.querySelector("small");
+ formcontrol.className = 'formcontrols error';
+ smalll.innerText = message;
+ }
+
+ function setSuccess(input){
+ const formcontrol = input.parentElement;
+ formcontrol.className = 'formcontrols success';
+ }
+
+ </script>
+</body>
+</html>
